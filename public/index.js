@@ -154,6 +154,37 @@ var actors = [{
   }]
 }];
 
+
+function Price(cars, rentals)
+{
+	for (var i=0; rentals.length < i;++i)
+	{	
+		var CarofRental = getCarsbyId(cars, rentals(i), car(Id));
+		var ReturnDate = new Date (rentals[id].pickupDate);
+		var PickupDate = new Date (rentals[id].returnDate);
+		var nbDays = 1+ (ReturnDate.getDay() - PickupDate.getDay());
+		
+		var Time = nbDays * CarofRental.pricePerDay;
+		var Distance = rentals[i].distance * CarofRental.pricePerKm;
+		
+		
+		console.log(nbDays);
+		console.log(rental[i].price);
+		
+	}
+	
+}
+
+function getCarsbyId(cars, Id)
+{
+	for (var c in cars)
+		{
+			if(cars[c].id == Id)
+				return cars[c];
+		}
+	return;
+}
+
 //list of rental modifcation
 //useful for exercise 6
 var rentalModifications = [{
@@ -167,5 +198,9 @@ var rentalModifications = [{
 
 console.log(cars);
 console.log(rentals);
+Price(cars, rentals);
+console.log(rentals);
+
 console.log(actors);
 console.log(rentalModifications);
+
