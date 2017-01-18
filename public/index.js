@@ -167,13 +167,47 @@ function Price(cars, rentals)
 		var Time = nbDays * CarofRental.pricePerDay;
 		var Distance = rentals[i].distance * CarofRental.pricePerKm;
 		
+		//exercise 2 start
+		if (nbDays > 10)
+		{
+			pricePerDay *= 0.5;
+		}
 		
+		else if (nbDays > 4)
+		{
+			pricePerDay *= 0.7;
+		}
+		
+		else if (nbDays > 1)
+		{
+			pricePerDay *= 0.9;
+		}
+		//exercise 2 end
+		
+		rentals[i].price = Time + Distance;
+		
+		//exercise 3 start
+		var commission = rentals[i].price * 0.3;
+		rentals[i].commission.assistance = nbDays;
+		rentals[i].commission.insurance = commission / 2;
+		rentals[i].commission.drivy = rentals[i].price - (rentals[i].commission.insurance + rentals[i].commission.assistance);
+		//exercise 3 end
+		
+		//exercise 4 start
+		var deductible = 4 * nbDays;
+		if(deductibleReduction = true)
+		{
+			rentals[i].price = deductible + rentals[i].price;
+		}
+				
+		//exercise 4 end
 		console.log(nbDays);
 		console.log(rental[i].price);
 		
 	}
 	
 }
+
 
 function getCarsbyId(cars, Id)
 {
